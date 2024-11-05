@@ -4,5 +4,5 @@
   "execMap": {
     "ts": "node --loader ts-node/esm"
   },
-  "watch": ["src"]
+  "watch": ["src", ".env"]
 }
