@@ -6,5 +6,7 @@ export default registerAs(ConfigEnum.APP, () => {
     throw new Error(`PORT env variable is not specified`);
   }
 
-  return { port: parseInt(process.env.PORT) };
+  return {
+    port: parseInt(process.env.PORT),
+  };
 });

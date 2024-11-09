@@ -5,6 +5,8 @@ import appConfig from "../configs/app.config.js";
 import dbConfig from "../configs/db.config.js";
 import dataSourceFactory from "../utils/data-source-factory.js";
 import getDataSourceOptions from "../utils/get-data-source-options.js";
+import { APIModule } from "./api/api.module.js";
+import { ProvidersModule } from "./providers/providers.module.js";
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import getDataSourceOptions from "../utils/get-data-source-options.js";
       useFactory: getDataSourceOptions,
       dataSourceFactory: dataSourceFactory as TypeOrmDataSourceFactory,
     }),
+    ProvidersModule,
+    APIModule,
   ],
 })
 export class AppModule {}
