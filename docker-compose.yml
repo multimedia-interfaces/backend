@@ -16,5 +16,13 @@ services:
       - 6379:6379
     command: "redis-server --requirepass $REDIS_PASSWORD"
 
+  backend:
+    build:
+      context: .
+    env_file:
+      - ./.env
+    ports:
+      - 8080:8080
+
 volumes:
   pgdata: {}
