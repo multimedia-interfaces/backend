@@ -1,8 +1,8 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class UserEntity extends BaseEntity {
-  @PrimaryColumn({ generated: "uuid" })
+  @PrimaryGeneratedColumn("uuid")
   readonly id!: string;
 
   @Column({ unique: true })
